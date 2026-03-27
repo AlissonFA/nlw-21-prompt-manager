@@ -8,6 +8,7 @@
 
   overflow-y: scroll; /* para ter scroll somente no Y */
 
+  /* header */
   & .main-header {
     display: flex;
     align-items: center;
@@ -15,6 +16,7 @@
     gap: 16px;
     width: 100%;
 
+    /* outline botão copiar */
     & .btn-outline {
       background: transparent;
       border: 0.5px solid var(--gray-200);
@@ -23,11 +25,13 @@
 
       transition: background-color 0.5s; /* suavidade ao hover */
 
+      /* hover botão copiar */
       &:hover {
         background-color: var(--gray-200);
       }
     }
 
+    /* botões */
     & .btn {
       display: flex;
       align-items: center;
@@ -43,57 +47,62 @@
       font-weight: 500;
 
       cursor: pointer;
+
+      & .icon {
+        width: 20px;
+        height: 20px;
+      }
     }
 
-    .btn-primary {
+    /* botão salvar */
+    & .btn-primary {
       width: 150px;
       padding: 0 24px;
       background: var(--accent-600);
       border: 1px solid var(--accent-500);
       transition: opacity 0.5s;
 
+      /* hover botão salvar */
       &:hover {
         opacity: 0.8;
       }
     }
   }
-}
 
-.icon {
-  width: 20px;
-  height: 20px;
-}
-
-.prompt-title {
-  font-size: 32px;
-  font-weight: 600;
-  outline: none;
-}
-
-.prompt-content {
-  font-size: 16px;
-  color: var(--white);
-  outline: none;
-  line-height: 32px;
-}
-
-.editable-wrapper {
-  position: relative;
-
-  &::before {
-    content: attr(data-placeholder);
-    position: absolute;
-    color: var(--gray-200);
-    pointer-events: none; /* desabilita para n dar pra copiar e nem fazer nada com o placeholder */
-    opacity: 0;
+  /* Titulo: Planejamento... */
+  & .prompt-title {
+    font-size: 32px;
+    font-weight: 600;
+    outline: none;
   }
-}
 
-.is-empty::before {
-  opacity: 1;
-}
+  /* Conteúdo: Me ajude... */
+  & .prompt-content {
+    font-size: 16px;
+    color: var(--white);
+    outline: none;
+    line-height: 32px;
+  }
 
-#title-wrapper.is-empty {
-  font-size: 32px;
-  color: var(--gray-200);
+  /* campos editáveis */
+  & .editable-wrapper {
+    position: relative;
+
+    &::before {
+      content: attr(data-placeholder);
+      position: absolute;
+      color: var(--gray-200);
+      pointer-events: none; /* desabilita para n dar pra copiar e nem fazer nada com o placeholder */
+      opacity: 0;
+    }
+  }
+
+  & .is-empty::before {
+    opacity: 1;
+  }
+
+  & #title-wrapper.is-empty {
+    font-size: 32px;
+    color: var(--gray-200);
+  }
 }
