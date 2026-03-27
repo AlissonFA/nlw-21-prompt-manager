@@ -1,13 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompts</title>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="shortcut icon" href="./assets/icons/favicon.svg" type="image/x-icon">
-</head>
-<body>
-  
-</body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompts</title>
+
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/favicon.svg"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./assets/css/index.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar"></aside>
+
+      <main class="main">
+        <header class="main-header">
+
+          <!-- botão de copiar -->
+          <button id="btn-copy" class="btn-outline btn">
+            <img class="icon" src="./assets/icons/copy.svg" alt="Copiar" />
+            <span class="text">Copiar</span>
+          </button>
+
+          <!-- botão de salvar -->
+          <button id="btn-save" class="btn-primary btn w-150">Salvar</button>
+        </header>
+
+          <div data-placeholder="Título do prompt" class="editable-wrapper" id="tittle-wrapper">
+            <h1 id="prompt-title" class="prompt-title" contenteditable="true">⚡ Planejamento de tarefas semanais</h1> <!-- essa propriedade contenteditable permite mudar o titulo no próprio site -->
+          </div>
+
+          <div data-placeholder="Conteúdo do prompt ..." class="editable-wrapper" id="content-wrapper">
+            <div class="prompt-content" contenteditable="true">
+              Me ajude a organizar minha semana de forma equilibrada.<br>Distribua
+              minhas tarefas profissionais e pessoais em blocos de tempo
+              realistas.<br><br>Sugira horários para foco profundo e momentos para
+              pausas estratégicas.<br><br>Inclua dicas de priorização. No final,
+              entregue o plano em formato de checklist diário para fácil <br>
+              acompanhamento.
+            </div>
+          </div>
+      </main>
+    </div>
+  </body>
 </html>
