@@ -27,7 +27,6 @@
 
       <main class="main">
         <header class="main-header">
-
           <!-- botão de copiar -->
           <button id="btn-copy" class="btn-outline btn">
             <img class="icon" src="./assets/icons/copy.svg" alt="Copiar" />
@@ -38,21 +37,40 @@
           <button id="btn-save" class="btn-primary btn w-150">Salvar</button>
         </header>
 
-          <div data-placeholder="Título do prompt" class="editable-wrapper" id="tittle-wrapper">
-            <h1 id="prompt-title" class="prompt-title" contenteditable="true">⚡ Planejamento de tarefas semanais</h1> <!-- essa propriedade contenteditable permite mudar o titulo no próprio site -->
-          </div>
+        <div
+          data-placeholder="Título do prompt"
+          class="editable-wrapper"
+          id="title-wrapper"
+        >
+          <h1 id="prompt-title" class="prompt-title" contenteditable="true">
+            ⚡ Planejamento de tarefas semanais
+          </h1>
+          <!-- essa propriedade contenteditable permite mudar o titulo no próprio site -->
+        </div>
 
-          <div data-placeholder="Conteúdo do prompt ..." class="editable-wrapper" id="content-wrapper">
-            <div class="prompt-content" contenteditable="true">
-              Me ajude a organizar minha semana de forma equilibrada.<br>Distribua
-              minhas tarefas profissionais e pessoais em blocos de tempo
-              realistas.<br><br>Sugira horários para foco profundo e momentos para
-              pausas estratégicas.<br><br>Inclua dicas de priorização. No final,
-              entregue o plano em formato de checklist diário para fácil <br>
-              acompanhamento.
-            </div>
+        <div
+          data-placeholder="Conteúdo do prompt ..."
+          class="editable-wrapper"
+          id="content-wrapper"
+        >
+          <div
+            id="prompt-content"
+            class="prompt-content"
+            contenteditable="true"
+          >
+            Me ajude a organizar minha semana de forma equilibrada.<br />Distribua
+            minhas tarefas profissionais e pessoais em blocos de tempo
+            realistas.<br /><br />Sugira horários para foco profundo e momentos
+            para pausas estratégicas.<br /><br />Inclua dicas de priorização. No
+            final, entregue o plano em formato de checklist diário para fácil
+            <br />
+            acompanhamento.
           </div>
+        </div>
       </main>
     </div>
+
+    <!-- JavaScript fica antes do encerramento do body, ele fica no final para priorizar o carregamento do visual -->
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
