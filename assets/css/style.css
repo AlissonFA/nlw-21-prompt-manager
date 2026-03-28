@@ -1,0 +1,292 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* barra de scrol */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* mudar cor da barra de scroll */
+::-webkit-scrollbar-thumb {
+  background-color: var(--gray-100);
+}
+
+:root {
+  /* White */
+  --white: #ffffff;
+
+  /* Accent */
+  --accent-600: #4863f7;
+  --accent-500: #7878d7;
+
+  /* Alert */
+  --alert-600: #ff5c5c;
+
+  /* Gray */
+  --gray-900: #0d0d0d;
+  --gray-800: #111111;
+  --gray-700: #1a1a1a;
+  --gray-200: #424242;
+  --gray-100: #737373;
+}
+
+body {
+  background-color: var(--gray-900); /* Cor de fundo */
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+}
+
+input,
+button {
+  font-family: "Inter", sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Utility */
+.logo {
+  height: 24px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Botão */
+.icon-button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.open-toggle {
+  position: absolute;
+  top: 62px;
+  left: 62px;
+  display: none;
+}
+
+.sidebar-collapsed {
+  & .sidebar {
+    display: none;
+  }
+
+  & .open-toggle {
+    display: block;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  width: 400px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 50px;
+  padding: 32px;
+
+  background-color: var(--gray-800);
+  border-right: 0.5px solid var(--gray-700);
+
+  & .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  & .search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-700);
+  }
+
+  & .search-input {
+    width: 336px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+  }
+
+  & .search-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  & .search-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  & .search-input input::placeholder {
+    color: var(--gray-200);
+    font-weight: 400;
+  }
+
+  & .search-container .btn {
+    width: 336px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 24px;
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  & .search-container .btn-primary {
+    background: var(--accent-600);
+    border: 1px solid var(--accent-500);
+    transition: opacity 0.5s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* Main */
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  gap: 32px;
+  padding: 62px 124px;
+
+  overflow-y: scroll; /* para ter scroll somente no Y */
+
+  /* header */
+  & .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    width: 100%;
+
+    /* outline botão copiar */
+    & .btn-outline {
+      background: transparent;
+      border: 0.5px solid var(--gray-200);
+
+      padding: 0 16px;
+
+      transition: background-color 0.5s; /* suavidade ao hover */
+
+      /* hover botão copiar */
+      &:hover {
+        background-color: var(--gray-200);
+      }
+    }
+
+    /* botões */
+    & .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* deixar os textos no meio (eixo x) */
+      height: 44px;
+      gap: 10px;
+
+      border-radius: 6px;
+
+      color: var(--white);
+
+      font-size: 14px;
+      font-weight: 500;
+
+      cursor: pointer;
+    }
+
+    /* botão salvar */
+    & .btn-primary {
+      width: 150px;
+      padding: 0 24px;
+      background: var(--accent-600);
+      border: 1px solid var(--accent-500);
+      transition: opacity 0.5s;
+
+      /* hover botão salvar */
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  /* Titulo: Planejamento... */
+  & .prompt-title {
+    font-size: 32px;
+    font-weight: 600;
+    outline: none;
+  }
+
+  /* Conteúdo: Me ajude... */
+  & .prompt-content {
+    font-size: 16px;
+    color: var(--white);
+    outline: none;
+    line-height: 32px;
+  }
+
+  /* campos editáveis */
+  & .editable-wrapper {
+    position: relative;
+
+    &::before {
+      content: attr(data-placeholder);
+      position: absolute;
+      color: var(--gray-200);
+      pointer-events: none; /* desabilita para n dar pra copiar e nem fazer nada com o placeholder */
+      opacity: 0;
+
+      line-height: 32px;
+    }
+  }
+
+  & .is-empty::before {
+    opacity: 1;
+  }
+
+  & #title-wrapper.is-empty {
+    font-size: 32px;
+    color: var(--gray-200);
+  }
+}
