@@ -1,0 +1,4 @@
+.vscode
+
+# também dá para ignorar somente um arquivo:
+# .vscode/mcp.json
