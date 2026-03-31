@@ -51,8 +51,13 @@
               />
             </label>
 
-            <button class="btn-primary btn" type="button" id="btn-new">Novo prompt</button>
+            <button class="btn-primary btn" type="button" id="btn-new">
+              Novo prompt
+            </button>
           </div>
+
+          <!-- abertura de listas; inserir li dentro -->
+          <ul class="prompt-list" id="prompt-list"></ul>
         </div>
       </aside>
 
@@ -73,10 +78,7 @@
           class="editable-wrapper"
           id="title-wrapper"
         >
-          <h1 id="prompt-title" class="prompt-title" contenteditable="true">
-            ⚡ Planejamento de tarefas semanais
-          </h1>
-          <!-- essa propriedade contenteditable permite mudar o titulo no próprio site -->
+          <h1 id="prompt-title" class="prompt-title" contenteditable="true"></h1> <!-- essa propriedade contenteditable permite mudar o titulo no próprio site -->
         </div>
 
         <div
@@ -88,15 +90,7 @@
             id="prompt-content"
             class="prompt-content"
             contenteditable="true"
-          >
-            Me ajude a organizar minha semana de forma equilibrada.<br />Distribua
-            minhas tarefas profissionais e pessoais em blocos de tempo
-            realistas.<br /><br />Sugira horários para foco profundo e momentos
-            para pausas estratégicas.<br /><br />Inclua dicas de priorização. No
-            final, entregue o plano em formato de checklist diário para fácil
-            <br />
-            acompanhamento.
-          </div>
+          ></div>
         </div>
       </main>
     </div>
